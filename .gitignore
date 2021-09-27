@@ -1,0 +1,8 @@
+./.idea/
+
+zdblog-cms/node_modules
+zdblog-cms/.env
+
+zdblog-web/node_modules
+zdblog-web/cache
+zdblog-web/.env
