@@ -29,10 +29,6 @@
       "targetField": "title",
       "required": true
     },
-    "category": {
-      "model": "category",
-      "via": "articles"
-    },
     "image": {
       "model": "file",
       "via": "related",
@@ -48,6 +44,10 @@
     "author": {
       "via": "articles",
       "model": "writer"
+    },
+    "categories": {
+      "via": "articles",
+      "collection": "category"
     }
   }
 }
