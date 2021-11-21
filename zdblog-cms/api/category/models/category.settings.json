@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "categories",
   "info": {
-    "name": "category"
+    "name": "category",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "name": {
@@ -19,8 +21,9 @@
       "required": true
     },
     "articles": {
-      "via": "category",
-      "collection": "article"
+      "via": "categories",
+      "collection": "article",
+      "dominant": true
     }
   }
 }
