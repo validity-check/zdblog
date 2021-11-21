@@ -3,8 +3,8 @@ import React from "react";
 import { graphql } from "gatsby";
 
 export const query = graphql`
-  query CategoryQuery {
-    strapiCategories(slug: { eq: "food" }) {
+  query CategoryQuery($slug: String!) {
+    strapiCategories(slug: { eq: $slug }) {
       articles {
         author
         description
