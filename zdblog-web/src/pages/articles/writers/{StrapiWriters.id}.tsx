@@ -15,7 +15,7 @@ const writerPage = ({ data }) => {
   return (
     <div>
       <h1>Work in Progress</h1>
-      <p>Category page</p>
+      <p>Writer page</p>
     </div>
   );
 };
