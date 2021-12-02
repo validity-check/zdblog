@@ -9,8 +9,8 @@ export const NavBar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h2">
-          <Link to="/">ZDBlog</Link>
+        <Typography variant="h6" noWrap>
+          ZDBlog
         </Typography>
       </Toolbar>
     </AppBar>
