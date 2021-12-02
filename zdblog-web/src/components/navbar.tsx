@@ -9,7 +9,7 @@ export const NavBar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" noWrap>
+        <Typography variant="h4" noWrap>
           ZDBlog
         </Typography>
       </Toolbar>
