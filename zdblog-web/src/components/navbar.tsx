@@ -11,7 +11,7 @@ export const NavBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar>
-          <Typography variant="h4" noWrap>
+          <Typography variant="h3" noWrap>
             ZDBlog
           </Typography>
           <NavButton>Test</NavButton>
