@@ -14,9 +14,24 @@ export const NavBar = () => {
           <Typography variant="h4" noWrap>
             ZDBlog
           </Typography>
-          <Button sx={{ my: 2, color: "white", display: "block" }}>Test</Button>
+          <NavButton>Test</NavButton>
         </Toolbar>
       </Container>
     </AppBar>
+  );
+};
+
+const NavButton = ({ children }) => {
+  return (
+    <Button
+      sx={{
+        my: 2,
+        color: "white",
+        display: "block",
+        margin: "1rem",
+      }}
+    >
+      {children}
+    </Button>
   );
 };
