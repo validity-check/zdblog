@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,16 +15,19 @@ export const NavBar = () => {
           <Typography variant="h3" noWrap>
             ZDBlog
           </Typography>
-          <NavButton>Test</NavButton>
+          <NavButton url="/">Test</NavButton>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
 
-const NavButton = ({ children }) => {
+const NavButton = ({ children, url }) => {
   return (
     <Button
+      component={Link}
+      to={url}
+      variant="outlined"
       sx={{
         color: "white",
         display: "block",
