@@ -25,7 +25,6 @@ const NavButton = ({ children }) => {
   return (
     <Button
       sx={{
-        my: 2,
         color: "white",
         display: "block",
         margin: "1rem",
