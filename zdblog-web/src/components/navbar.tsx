@@ -16,7 +16,13 @@ export const NavBar = () => {
           <Typography variant="h3" noWrap>
             ZDBlog
           </Typography>
-          <Box sx={{ margin: "1rem" }}>
+          <Box
+            sx={{
+              margin: "1rem",
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             <NavButton url="/articles">Articles</NavButton>
             <NavButton url="/articles/categories">Categories</NavButton>
             <NavButton url="/articles/writers">Writers</NavButton>
