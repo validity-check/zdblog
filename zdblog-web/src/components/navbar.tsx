@@ -13,7 +13,13 @@ export const NavBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar>
-          <Typography variant="h3" noWrap>
+          <Typography
+            variant="h3"
+            noWrap
+            component={Link}
+            to="/"
+            sx={{ textDecoration: "none", color: "white" }}
+          >
             ZDBlog
           </Typography>
           <Box
