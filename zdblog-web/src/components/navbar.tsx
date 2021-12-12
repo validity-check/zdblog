@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
+import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const NavBar = () => {
   const isMobile = useMediaQuery("(max-width:900px)");
-  let isOpen = false;
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <AppBar position="static">
@@ -25,7 +28,7 @@ export const NavBar = () => {
               color="inherit"
               aria-label="menu"
               onClick={() => {
-                isOpen = !isOpen;
+                setIsOpen(!isOpen);
               }}
               sx={{ margin: "0.5rem" }}
             >
@@ -56,6 +59,15 @@ export const NavBar = () => {
           </Box>
         </Toolbar>
       </Container>
+      <Drawer open={isOpen} onClose={() => setIsOpen(false)} anchor="left">
+        <List>
+          <NavButtonMobile url="/articles">Articles</NavButtonMobile>
+          <NavButtonMobile url="/articles/categories">
+            Categories
+          </NavButtonMobile>
+          <NavButtonMobile url="/articles/writers">Writers</NavButtonMobile>
+        </List>
+      </Drawer>
     </AppBar>
   );
 };
@@ -73,5 +85,13 @@ const NavButton = ({ children, url }) => {
     >
       {children}
     </Button>
+  );
+};
+
+const NavButtonMobile = ({ children, url }) => {
+  return (
+    <ListItem button component={Link} to={url}>
+      {children}
+    </ListItem>
   );
 };
