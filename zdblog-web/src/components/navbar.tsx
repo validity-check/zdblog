@@ -4,15 +4,36 @@ import { Link } from "gatsby";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Box from "@mui/material/Box";
 
 export const NavBar = () => {
+  const isMobile = useMediaQuery("(max-width:900px)");
+  let isOpen = false;
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar>
+          {isMobile ? (
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={() => {
+                isOpen = !isOpen;
+              }}
+              sx={{ margin: "0.5rem" }}
+            >
+              <MenuIcon />
+            </IconButton>
+          ) : (
+            <div></div>
+          )}
           <Typography
             variant="h3"
             noWrap
