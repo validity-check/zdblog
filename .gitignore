@@ -70,3 +70,4 @@ zdblog-web/node_modules
 zdblog-web/.cache
 zdblog-web/public
 zdblog-web/.env
+zdblog-web/yarn-error.log
