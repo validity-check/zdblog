@@ -19,9 +19,9 @@ const ArticlesPage = () => {
             slug
             author {
               name
+              id
               picture {
                 url
-                id
               }
             }
             image {
@@ -45,7 +45,7 @@ const ArticlesPage = () => {
               slug={node.slug}
               writer={node.author.name}
               writerImage={process.env.API_URL + node.author.picture.url}
-              writerId={node.author.picture.id}
+              writerId={"writers-" + node.author.id}
               image={process.env.API_URL + node.image.url}
             />
           </Grid>
