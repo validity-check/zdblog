@@ -12,9 +12,9 @@ import Typography from "@mui/material/Typography";
 type Props = {
   title: string;
   description: string;
-  author: string;
-  authorId: string;
-  authorImage: string;
+  writer: string;
+  writerId: string;
+  writerImage: string;
   createdAt: string;
   slug: string;
   image: string;
@@ -23,9 +23,9 @@ type Props = {
 export const ArticleListItem = ({
   title,
   description,
-  author,
-  authorId,
-  authorImage,
+  writer,
+  writerId,
+  writerImage,
   createdAt,
   slug,
   image,
@@ -52,7 +52,7 @@ export const ArticleListItem = ({
         </CardContent>
       </CardActionArea>
       <CardActionArea
-        to={`/articles/writers/${authorId}`}
+        to={`/articles/writers/${writerId}`}
         component={Link}
         sx={{
           display: "flex",
@@ -63,11 +63,11 @@ export const ArticleListItem = ({
         <CardHeader
           avatar={
             <Avatar>
-              <img src={authorImage} alt={author} />
+              <img src={writerImage} alt={writer} />
             </Avatar>
           }
-          aria-label="author"
-          title={author}
+          aria-label="writer"
+          title={writer}
           subheader={createdAt}
         ></CardHeader>
       </CardActionArea>
