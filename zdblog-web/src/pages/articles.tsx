@@ -1,8 +1,30 @@
 import * as React from "react";
+import { graphql } from "gatsby";
 
 import Grid from "@mui/material/Grid";
 
 import { ArticleListItem } from "../components/article-list-item";
+
+const query = graphql`
+  {
+    allStrapiArticles {
+      edges {
+        node {
+          description
+          title
+          createdAt
+          slug
+          author {
+            name
+            picture {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 // markup
 const ArticlesPage = () => {
