@@ -13,6 +13,7 @@ type Props = {
   title: string;
   description: string;
   author: string;
+  authorId: string;
   authorImage: string;
   createdAt: string;
   slug: string;
@@ -23,6 +24,7 @@ export const ArticleListItem = ({
   title,
   description,
   author,
+  authorId,
   authorImage,
   createdAt,
   slug,
@@ -49,16 +51,26 @@ export const ArticleListItem = ({
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardHeader
-        avatar={
-          <Avatar>
-            <img src={authorImage} alt={author} />
-          </Avatar>
-        }
-        aria-label="author"
-        title={author}
-        subheader={createdAt}
-      ></CardHeader>
+      <CardActionArea
+        to={`/articles/writers/${authorId}`}
+        component={Link}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <CardHeader
+          avatar={
+            <Avatar>
+              <img src={authorImage} alt={author} />
+            </Avatar>
+          }
+          aria-label="author"
+          title={author}
+          subheader={createdAt}
+        ></CardHeader>
+      </CardActionArea>
     </Card>
   );
 };
