@@ -3,6 +3,7 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
 
 type Props = {
   title: string;
@@ -22,7 +23,14 @@ export const ArticleListItem = ({
   return (
     <Card sx={{ maxWidth: 345, m: 5 }}>
       <CardMedia component="img" height="194" image={image} />
-      <CardContent></CardContent>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {description}
+        </Typography>
+      </CardContent>
     </Card>
   );
 };
