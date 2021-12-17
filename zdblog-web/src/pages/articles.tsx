@@ -15,7 +15,7 @@ const ArticlesPage = () => {
             id
             description
             title
-            createdAt
+            published_at(formatString: "DD/MM/YY")
             slug
             author {
               name
@@ -41,7 +41,7 @@ const ArticlesPage = () => {
             <ArticleListItem
               title={node.title}
               description={node.description}
-              createdAt={node.createdAt}
+              publishedAt={node.published_at}
               slug={node.slug}
               writer={node.author.name}
               writerImage={process.env.API_URL + node.author.picture.url}

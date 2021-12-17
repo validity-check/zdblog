@@ -15,7 +15,7 @@ type Props = {
   writer: string;
   writerId: string;
   writerImage: string;
-  createdAt: string;
+  publishedAt: string;
   slug: string;
   image: string;
 };
@@ -26,7 +26,7 @@ export const ArticleListItem = ({
   writer,
   writerId,
   writerImage,
-  createdAt,
+  publishedAt,
   slug,
   image,
 }: Props) => {
@@ -68,7 +68,7 @@ export const ArticleListItem = ({
           }
           aria-label="writer"
           title={writer}
-          subheader={createdAt}
+          subheader={publishedAt}
         ></CardHeader>
       </CardActionArea>
     </Card>
