@@ -44,9 +44,11 @@ const ArticlesPage = () => {
               publishedAt={node.published_at}
               slug={node.slug}
               writer={node.author.name}
-              writerImage={process.env.API_URL + node.author.picture.url}
+              // TODO: THE BELOW CODE IS _TEMPORARY_!
+              // IT NEEDS TO BE EDITED INTO AN ENVIRONMENT VARIABLE ***BEFORE*** THE FIRST PRODUCTION RELEASE!
+              writerImage={"http://localhost:1337" + node.author.picture.url}
+              image={"http://localhost:1337" + node.image.url}
               writerId={"writers-" + node.author.id}
-              image={process.env.API_URL + node.image.url}
             />
           </Grid>
         ))}
