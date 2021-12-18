@@ -22,11 +22,15 @@ const ArticlesPage = () => {
               name
               id
               picture {
-                url
+                localFile {
+                  url
+                }
               }
             }
             image {
-              url
+              localFile {
+                url
+              }
             }
           }
         }
@@ -45,10 +49,8 @@ const ArticlesPage = () => {
               publishedAt={node.published_at}
               slug={node.slug}
               writer={node.author.name}
-              // TODO: THE BELOW CODE IS _TEMPORARY_!
-              // IT NEEDS TO BE EDITED INTO AN ENVIRONMENT VARIABLE ***BEFORE*** THE FIRST PRODUCTION RELEASE!
-              writerImage={"http://localhost:1337" + node.author.picture.url}
-              image={"http://localhost:1337" + node.image.url}
+              writerImage={node.author.picture.localFile.url}
+              image={node.image.localFile.url}
               writerId={"writers-" + node.author.id}
             />
           </Grid>
