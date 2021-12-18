@@ -61,11 +61,7 @@ export const ArticleListItem = ({
         }}
       >
         <CardHeader
-          avatar={
-            <Avatar>
-              <img src={writerImage} alt={writer} />
-            </Avatar>
-          }
+          avatar={<Avatar src={writerImage} alt={writer} />}
           aria-label="writer"
           title={writer}
           subheader={publishedAt}
