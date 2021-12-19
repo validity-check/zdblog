@@ -21,6 +21,11 @@ export const query = graphql`
           }
         }
       }
+      image {
+        localFile {
+          url
+        }
+      }
     }
   }
 `;
