@@ -2,6 +2,7 @@ import React from "react";
 
 import { graphql } from "gatsby";
 
+import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
 import { Layout } from "../../components/layout";
@@ -35,9 +36,20 @@ const articlePage = ({ data }) => {
   return (
     <Layout>
       <img src={article.image.localFile.url} width="100%" />
-      <Typography variant="h1" sx={{ textAlign: "center" }}>
-        {data.strapiArticles.title}
-      </Typography>
+      <Container sx={{ position: "relative" }}>
+        <Typography
+          variant="h1"
+          sx={{
+            position: "absolute",
+            bottom: "8px",
+            color: "#fff",
+            display: "inline",
+            background: "inherit",
+          }}
+        >
+          {data.strapiArticles.title}
+        </Typography>
+      </Container>
     </Layout>
   );
 };
