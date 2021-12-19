@@ -31,10 +31,13 @@ export const query = graphql`
 `;
 
 const articlePage = ({ data }) => {
+  const article = data.strapiArticles;
   return (
     <Layout>
-      {/* <img src={data.}></img> */}
-      <Typography variant="h1">{data.strapiArticles.title}</Typography>
+      <img src={article.image.localFile.url} width="100%" />
+      <Typography variant="h1" sx={{ textAlign: "center" }}>
+        {data.strapiArticles.title}
+      </Typography>
     </Layout>
   );
 };
