@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Grid from "@mui/material/Grid";
 
-import { Layout } from "../components/layout";
+import { Layout } from "../components/layout/layout";
 import { ArticleListItem } from "../components/articles/article-list-item";
 
 // markup

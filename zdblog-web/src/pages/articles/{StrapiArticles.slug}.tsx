@@ -3,9 +3,10 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
-import { Layout } from "../../components/layout";
+import { Layout } from "../../components/layout/layout";
 
 export const query = graphql`
   query ArticleQuery($slug: String!) {
@@ -49,6 +50,17 @@ const articlePage = ({ data }) => {
           {data.strapiArticles.title}
         </Typography>
       </Box>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <Typography variant="h2">{article.title}</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="body1">{article.description}</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="body1">{article.content}</Typography>
+        </Grid>
+      </Grid>
     </Layout>
   );
 };
