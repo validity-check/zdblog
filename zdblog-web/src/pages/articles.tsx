@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Grid from "@mui/material/Grid";
 
 import { Layout } from "../components/layout";
-import { ArticleListItem } from "../components/article-list-item";
+import { ArticleListItem } from "../components/articles/article-list-item";
 
 // markup
 const ArticlesPage = () => {
