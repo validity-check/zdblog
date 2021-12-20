@@ -62,20 +62,16 @@ const articlePage = ({ data }) => {
               component="img"
               image={article.image.localFile.url}
             ></CardMedia>
-            <Grid container>
-              <Grid item xs={6}>
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      src={article.author.picture.localFile.url}
-                      alt={article.author.name}
-                    />
-                  }
-                  aria-label="writer"
-                  title={article.author.name}
-                ></CardHeader>
-              </Grid>
-            </Grid>
+            <CardHeader
+              avatar={
+                <Avatar
+                  src={article.author.picture.localFile.url}
+                  alt={article.author.name}
+                />
+              }
+              aria-label="writer"
+              title={article.author.name}
+            ></CardHeader>
             <Typography variant="body1" sx={{ color: "gray" }}>
               <i>{article.description}</i>
             </Typography>
