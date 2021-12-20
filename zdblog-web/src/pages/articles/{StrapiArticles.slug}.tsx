@@ -4,8 +4,10 @@ import { graphql } from "gatsby";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import Avatar from "@mui/material/Avatar";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
+import CardHeader from "@mui/material/CardHeader";
 import Typography from "@mui/material/Typography";
 
 import { Layout } from "../../components/layout/layout";
@@ -52,14 +54,28 @@ const articlePage = ({ data }) => {
           {data.strapiArticles.title}
         </Typography>
       </Box>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} sx={{ padding: 1 }}>
         <Grid item xs={4}>
-          <Card>
+          <Card sx={{ padding: 1 }}>
             <Typography variant="h2">{article.title}</Typography>
             <CardMedia
               component="img"
               image={article.image.localFile.url}
             ></CardMedia>
+            <Grid container>
+              <Grid item xs={6}>
+                <CardHeader
+                  avatar={
+                    <Avatar
+                      src={article.author.picture.localFile.url}
+                      alt={article.author.name}
+                    />
+                  }
+                  aria-label="writer"
+                  title={article.author.name}
+                ></CardHeader>
+              </Grid>
+            </Grid>
             <Typography variant="body1" sx={{ color: "gray" }}>
               <i>{article.description}</i>
             </Typography>
