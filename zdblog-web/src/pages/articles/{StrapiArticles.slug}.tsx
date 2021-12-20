@@ -4,6 +4,8 @@ import { graphql } from "gatsby";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
 import { Layout } from "../../components/layout/layout";
@@ -51,13 +53,19 @@ const articlePage = ({ data }) => {
         </Typography>
       </Box>
       <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Typography variant="h2">{article.title}</Typography>
+        <Grid item xs={4}>
+          <Card>
+            <Typography variant="h2">{article.title}</Typography>
+            <CardMedia
+              component="img"
+              image={article.image.localFile.url}
+            ></CardMedia>
+            <Typography variant="body1" sx={{ color: "gray" }}>
+              <i>{article.description}</i>
+            </Typography>
+          </Card>
         </Grid>
-        <Grid item xs={12}>
-          <Typography variant="body1">{article.description}</Typography>
-        </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={8}>
           <Typography variant="body1">{article.content}</Typography>
         </Grid>
       </Grid>
