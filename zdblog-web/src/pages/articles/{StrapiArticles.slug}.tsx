@@ -71,6 +71,7 @@ const articlePage = ({ data }) => {
               }
               aria-label="writer"
               title={article.author.name}
+              subheader={article.published_at}
             ></CardHeader>
             <Typography variant="body1" sx={{ color: "gray" }}>
               <i>{article.description}</i>
