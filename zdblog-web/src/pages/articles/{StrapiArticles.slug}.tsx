@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
 import Box from "@mui/material/Box";
@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import Avatar from "@mui/material/Avatar";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
+import CardActionArea from "@mui/material/CardActionArea";
 import CardHeader from "@mui/material/CardHeader";
 import Typography from "@mui/material/Typography";
 
@@ -21,6 +22,7 @@ export const query = graphql`
       published_at(formatString: "DD/MM/YY")
       author {
         name
+        id
         picture {
           localFile {
             url
@@ -62,17 +64,27 @@ const articlePage = ({ data }) => {
               component="img"
               image={article.image.localFile.url}
             ></CardMedia>
-            <CardHeader
-              avatar={
-                <Avatar
-                  src={article.author.picture.localFile.url}
-                  alt={article.author.name}
-                />
-              }
-              aria-label="writer"
-              title={article.author.name}
-              subheader={article.published_at}
-            ></CardHeader>
+            <CardActionArea
+              to={`/articles/writers/writers-${article.author.id}`}
+              component={Link}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <CardHeader
+                avatar={
+                  <Avatar
+                    src={article.author.picture.localFile.url}
+                    alt={article.author.name}
+                  />
+                }
+                aria-label="writer"
+                title={article.author.name}
+                subheader={article.published_at}
+              ></CardHeader>
+            </CardActionArea>
             <Typography variant="body1" sx={{ color: "gray" }}>
               <i>{article.description}</i>
             </Typography>
