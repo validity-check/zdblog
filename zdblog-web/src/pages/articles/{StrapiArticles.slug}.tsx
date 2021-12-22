@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
+import Markdown from "react-markdown";
+
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Avatar from "@mui/material/Avatar";
@@ -91,7 +93,7 @@ const articlePage = ({ data }) => {
           </Card>
         </Grid>
         <Grid item xs={8}>
-          <Typography variant="body1">{article.content}</Typography>
+          <Markdown children={article.content} />
         </Grid>
       </Grid>
     </Layout>
