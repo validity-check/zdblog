@@ -1,6 +1,6 @@
 import React from "react";
 import { NavBar } from "./navbar";
-import "../index.css";
+import "../../index.css";
 
 export const Layout = ({ children }) => {
   return (
