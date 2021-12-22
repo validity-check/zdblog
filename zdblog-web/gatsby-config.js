@@ -17,6 +17,5 @@ module.exports = {
       },
       queryLimit: 1000,
     },
-    `gatsby-plugin-mdx`,
   ],
 };
