@@ -28,7 +28,9 @@ export const query = graphql`
         id
         picture {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
       }
@@ -46,6 +48,7 @@ export const query = graphql`
 const articlePage = ({ data }) => {
   const article = data.strapiArticles;
   const articleImage = getImage(article.image.localFile);
+  const authorImage = getImage(article.author.picture.localFile);
   return (
     <Layout>
       <GatsbyImage
@@ -84,10 +87,12 @@ const articlePage = ({ data }) => {
             >
               <CardHeader
                 avatar={
-                  <Avatar
-                    src={article.author.picture.localFile.url}
-                    alt={article.author.name}
-                  />
+                  <Avatar>
+                    <GatsbyImage
+                      image={authorImage}
+                      alt={article.author.name}
+                    />
+                  </Avatar>
                 }
                 aria-label="writer"
                 title={article.author.name}
