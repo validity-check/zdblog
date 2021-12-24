@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Markdown from "react-markdown";
 
@@ -33,7 +34,9 @@ export const query = graphql`
       }
       image {
         localFile {
-          url
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
@@ -42,9 +45,14 @@ export const query = graphql`
 
 const articlePage = ({ data }) => {
   const article = data.strapiArticles;
+  const articleImage = getImage(article.image.localFile);
   return (
     <Layout>
-      <img src={article.image.localFile.url} width="100%" />
+      <GatsbyImage
+        image={articleImage}
+        alt={article.title}
+        style={{ width: "100%" }}
+      />
       <Box sx={{ position: "relative" }}>
         <Typography
           variant="h1"
