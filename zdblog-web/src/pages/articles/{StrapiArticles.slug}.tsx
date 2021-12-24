@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Markdown from "react-markdown";
 
@@ -27,13 +28,17 @@ export const query = graphql`
         id
         picture {
           localFile {
-            url
+            childImageSharp {
+              gatsbyImageData
+            }
           }
         }
       }
       image {
         localFile {
-          url
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
@@ -42,9 +47,15 @@ export const query = graphql`
 
 const articlePage = ({ data }) => {
   const article = data.strapiArticles;
+  const articleImage = getImage(article.image.localFile);
+  const authorImage = getImage(article.author.picture.localFile);
   return (
     <Layout>
-      <img src={article.image.localFile.url} width="100%" />
+      <GatsbyImage
+        image={articleImage}
+        alt={article.title}
+        style={{ width: "100%" }}
+      />
       <Box sx={{ position: "relative" }}>
         <Typography
           variant="h1"
@@ -62,10 +73,9 @@ const articlePage = ({ data }) => {
         <Grid item xs={4}>
           <Card sx={{ padding: 1 }}>
             <Typography variant="h2">{article.title}</Typography>
-            <CardMedia
-              component="img"
-              image={article.image.localFile.url}
-            ></CardMedia>
+            <CardMedia>
+              <GatsbyImage image={articleImage} alt={article.title} />
+            </CardMedia>
             <CardActionArea
               to={`/articles/writers/writers-${article.author.id}`}
               component={Link}
@@ -77,10 +87,12 @@ const articlePage = ({ data }) => {
             >
               <CardHeader
                 avatar={
-                  <Avatar
-                    src={article.author.picture.localFile.url}
-                    alt={article.author.name}
-                  />
+                  <Avatar>
+                    <GatsbyImage
+                      image={authorImage}
+                      alt={article.author.name}
+                    />
+                  </Avatar>
                 }
                 aria-label="writer"
                 title={article.author.name}

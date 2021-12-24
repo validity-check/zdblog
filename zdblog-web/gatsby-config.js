@@ -17,5 +17,8 @@ module.exports = {
       },
       queryLimit: 1000,
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 };

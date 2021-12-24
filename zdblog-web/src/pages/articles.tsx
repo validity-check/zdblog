@@ -23,13 +23,17 @@ const ArticlesPage = () => {
               id
               picture {
                 localFile {
-                  url
+                  childImageSharp {
+                    gatsbyImageData
+                  }
                 }
               }
             }
             image {
               localFile {
-                url
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
             }
           }
@@ -49,8 +53,8 @@ const ArticlesPage = () => {
               publishedAt={node.published_at}
               slug={node.slug}
               writer={node.author.name}
-              writerImage={node.author.picture.localFile.url}
-              image={node.image.localFile.url}
+              writerImage={node.author.picture.localFile}
+              image={node.image.localFile}
               writerId={"writers-" + node.author.id}
             />
           </Grid>
