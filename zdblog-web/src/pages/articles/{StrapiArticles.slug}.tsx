@@ -70,10 +70,9 @@ const articlePage = ({ data }) => {
         <Grid item xs={4}>
           <Card sx={{ padding: 1 }}>
             <Typography variant="h2">{article.title}</Typography>
-            <CardMedia
-              component="img"
-              image={article.image.localFile.url}
-            ></CardMedia>
+            <CardMedia>
+              <GatsbyImage image={articleImage} alt={article.title} />
+            </CardMedia>
             <CardActionArea
               to={`/articles/writers/writers-${article.author.id}`}
               component={Link}
