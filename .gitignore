@@ -1,7 +1,31 @@
+# IDE files
 .idea/
+zdblog-cms/.idea
+zdblog-web/.idea
 
+# Packages
 zdblog-cms/node_modules
+zdblog-cms/.node_history
+zdblog-web/node_modules
+
+# Environment variables
 zdblog-cms/.env
+zdblog-web/.env
+
+# Cache
+zdblog-cms/*.cache
+zdblog-web/.cache
+
+# Public folders
+zdblog-cms/public/uploads/*
+zdblog-cms/!public/uploads/.gitkeep
+zdblog-web/public
+
+# Logs
+zdblog-cms/logs
+zdblog-web/yarn-error.log
+
+# Other irrelevant files
 zdblog-cms/.DS_Store
 zdblog-cms/.AppleDouble
 zdblog-cms/.LSOverride
@@ -48,26 +72,15 @@ zdblog-cms/*.sqlite
 zdblog-cms/*.sqlite3
 zdblog-cms/*#
 zdblog-cms/ssl
-zdblog-cms/.idea
 zdblog-cms/nbproject
-zdblog-cms/public/uploads/*
-zdblog-cms/!public/uploads/.gitkeep
 zdblog-cms/lib-cov
 zdblog-cms/lcov.info
 zdblog-cms/pids
-zdblog-cms/logs
 zdblog-cms/results
-zdblog-cms/.node_history
 zdblog-cms/testApp
 zdblog-cms/coverage
 zdblog-cms/license.txt
 zdblog-cms/exports
-zdblog-cms/*.cache
 zdblog-cms/build
 zdblog-cms/.strapi-updater.json
 
-zdblog-web/node_modules
-zdblog-web/.cache
-zdblog-web/public
-zdblog-web/.env
-zdblog-web/yarn-error.log
