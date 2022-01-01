@@ -3,27 +3,27 @@ import { graphql } from "gatsby";
 
 import { Layout } from "../../components/layout/layout";
 
-export const query = graphql`
-  query WritersQuery {
-    allStrapiWriters {
-      edges {
-        node {
-          id
-          name
-          picture {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
+const writersPage = ({ data }) => {
+  const query = graphql`
+    query WritersQuery {
+      allStrapiWriters {
+        edges {
+          node {
+            id
+            name
+            picture {
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
             }
           }
         }
       }
     }
-  }
-`;
+  `;
 
-const writersPage = () => {
   return (
     <Layout>
       <h1>Writer list</h1>
