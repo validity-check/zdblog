@@ -3,8 +3,10 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
 
 import { Layout } from "../../components/layout/layout";
 
@@ -41,7 +43,9 @@ const writersPage = () => {
                   alt={node.name}
                 />
               </CardMedia>
-              <h3>{node.name}</h3>
+              <CardContent>
+                <Typography variant="h6">{node.name}</Typography>
+              </CardContent>
             </Card>
           </Grid>
         ))}
