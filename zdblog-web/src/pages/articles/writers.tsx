@@ -1,6 +1,8 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 
+import { Layout } from "../../components/layout/layout";
+
 export const query = graphql`
   query WritersQuery {
     allStrapiWriters {
@@ -23,10 +25,10 @@ export const query = graphql`
 
 const writersPage = () => {
   return (
-    <div>
+    <Layout>
       <h1>Writer list</h1>
       <p>Work in Progress</p>
-    </div>
+    </Layout>
   );
 };
 
