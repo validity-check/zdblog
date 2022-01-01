@@ -31,7 +31,7 @@ const writersPage = () => {
 
   return (
     <Layout>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ padding: 5 }}>
         {data.allStrapiWriters.edges.map(({ node }) => (
           <Grid item xs={12} sm={6} md={4} key={node.id}>
             <Card>
